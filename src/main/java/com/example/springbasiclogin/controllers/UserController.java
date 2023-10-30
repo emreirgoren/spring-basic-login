@@ -9,18 +9,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/user")
 public class UserController {
 
-    
     @Autowired
     private UserService userService;
 
     @PostMapping("/createUser")
-    public User createUser(@RequestBody User newUser){
+    public User createUser(@RequestBody User newUser) {
         return userService.createUser(newUser);
     }
 
     @GetMapping("/login/{username}/{password}")
-    public String login(@PathVariable String username, @PathVariable String password){
-        return userService.login(username,password);
+    public String login(@PathVariable String username, @PathVariable String password) {
+        return userService.login(username, password);
     }
 
 }
